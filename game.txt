@@ -1,0 +1,40 @@
+Click on chip you want to bet.
+    create chips with value of 1, 5, 20, 100, 500.
+    add event.listener to each
+    block bet button. 
+
+Deal two cards to player facing up.
+
+Dealer gets two cards, one facing up and the other facing down.
+ display: none until after the player chooses stand.
+ setTimeout() to wait until after the player is done
+ 
+
+Player clicks on stand.
+ No cards will be dealt.
+ Prompt for dealer to show card dealerReveal.
+Player clicks on Hit.
+ one card will be dealt.
+player hits double down. 
+bet amount *2 but will only add one card to hand.
+play hand.
+ if (sum of cards > 21) return "Bust!"
+  block off buttons 
+ if (sum of cards === 21) return "You Win"
+ block out buttons
+ if (sum of cards < 21) allow to choose to get a hit or stand.
+ If dealer gets closer to 21, dealer wins.
+ if dealer gets over 21, player wins.
+ if player gets closer to 21, player wins.
+ if player gets over 21 dealer wins.
+ if player score === dealer score return "Tie"
+ replay button display after game is over.
+ clear all cards from table.
+ Clear bet amount.
+ Allow bet button.
+
+
+
+
+
+
