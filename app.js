@@ -1,13 +1,10 @@
-
+let startGameButton = document.querySelector("welcome-button")
 let newGameButton = document.querySelector(".new-game-button")
 let hitButton = document.querySelector(".hit-button")
 let standButton = document.querySelector(".stand-button")
 let dealerHand = document.querySelector(".dealer-hand")
 let playerHand = document.querySelector(".player-hand")
 let results = document.querySelector(".results")
-// let hidden = document.getElementById("#hidden")
-// playerHand = [];
-// dealerHand = [];
 let dealerSum = 0;
 let playerSum = 0;
 
@@ -19,13 +16,11 @@ let canHit = true;
 
 
 window.onload = function() {
-    // newGame()
     createDeckOfCards();
     shuffle();
     startGame();
-    // newGame();
 }
-// create shuffled deck of card
+
 function createDeckOfCards() {
 let suits = ["C", "D", "H", "S"];
 let values = ["A", "2", "3", "4", "5", "6", "7", "8","9", "10", "J", "Q", "K"];
@@ -36,7 +31,6 @@ deck = [];
             deck.push(values[j] + "-" + suits[i]);
         }
     }
-    // console.log(deck)
 }
 
 function shuffle() {
@@ -49,8 +43,7 @@ function shuffle() {
     } 
     
 }
-// newGameButton.addEventListener("click", newGame)
-// start game 
+
 function startGame() {
     hidden = deck.pop();
     dealerSum += getValue(hidden);
@@ -71,35 +64,9 @@ function startGame() {
     dealerSum += getValue(card3);
     dealerAceAmount += checkAce(card3);
     dealerHand.append(cardImg3);
-
-
-
-    
-    // while (dealerSum < 17) {
-    // let cardImg = document.createElement("img");
-    // let card = deck.pop();
-    // cardImg.src = "./cards/" + card + ".png";
-    // dealerSum += getValue(card);
-    // dealerAceAmount += checkAce(card);
-    // dealerHand.append(cardImg); 
-    // }
-    // // console.log(dealerSum)
-    
-    // for(let i = 0; i < 2; i++) {
-    //     let cardImg = document.createElement("img");
-    //     let card = deck.pop();
-    //     cardImg.src = "./cards/" + card + ".png";
-    //     playerSum += getValue(card);
-    //     playerAceAmount += checkAce(card);
-    //     playerHand.append(cardImg);
-    // }
-    
-    
     hitButton.addEventListener("click", hit)
     standButton.addEventListener("click", stand)
     newGameButton.addEventListener("click", newGame)
-
-    
     
 }
 function stand() {
@@ -117,15 +84,16 @@ function stand() {
     canHit = false;
     document.getElementById("hidden").src = "./cards/" + hidden + ".png";
 
+
     let message = "";
     if(playerSum > 21) {
         message = "YOU LOOSE"
     } else if (dealerSum >21) {
-        message = "YOU WIN"
+        message = "You Win"
     } else if (playerSum === dealerSum) {
         message = "Tie!"
     } else if (playerSum > dealerSum) {
-        message = "YOU WIN"
+        message = "You Win"
     } else if (playerSum < dealerSum) {
         message = "YOU LOSE!"
     }
@@ -180,7 +148,7 @@ function checkAce(card) {
     }
 }
 
-// newGameButton.addEventListener("click", newGame)
+
     function newGame() {
     dealerHand.innerHTML = "";
     playerHand.innerHTML = "";
@@ -189,7 +157,6 @@ function checkAce(card) {
     hiddenCard.src = "./cards/BACK.png"
     hiddenCard.setAttribute("id", "hidden")
     dealerHand.appendChild(hiddenCard)
-    // document.getElementById("hidden"). src="./cards/BACK.png"
     deck;
     dealerSum = 0;
     playerSum = 0;
