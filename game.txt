@@ -10,14 +10,17 @@ Dealer gets two cards, one facing up and the other facing down.
  setTimeout() to wait until after the player is done
  
 
-Player clicks on stand.
+If Player clicks on stand.
  No cards will be dealt.
  Prompt for dealer to show card dealerReveal.
 Player clicks on Hit.
  one card will be dealt.
 player hits double down. 
-bet amount *2 but will only add one card to hand.
-play hand.
+
+if first two cards are the same value, allow split button.
+If player clicks split, split two cards into 2 hands.
+
+
  if (sum of cards > 21) return "Bust!"
   block off buttons 
  if (sum of cards === 21) return "You Win"
@@ -32,6 +35,17 @@ play hand.
  clear all cards from table.
  Clear bet amount.
  Allow bet button.
+
+
+ background add image of blackjack casino.
+
+ If the player has blackjack, they win, unless the dealer also has blackjack, in which case the game is a tie.
+
+If the dealer busts and the player doesn't, the player wins.
+
+If the player busts, the dealer wins.
+
+If the player and the dealer both don't bust, whoever is closest to 21 win
 
 
 
