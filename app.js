@@ -62,7 +62,6 @@ function startGame() {
     dealerSum += getValue(card3);
     dealerAceAmount += checkAce(card3);
     dealerHand.append(cardImg3);
-    document.getElementById("dealer-sum").innnerText = dealerSum;
     document.getElementById("player-sum").innerText = playerSum;
     hitButton.addEventListener("click", hit)
     standButton.addEventListener("click", stand)
@@ -87,7 +86,7 @@ function stand() {
 
     let message = "";
     if(playerSum > 21) {
-        message = "YOU LOOSE"
+        message = "You Lose"
     } else if (dealerSum >21) {
         message = "You Win"
     } else if (playerSum === dealerSum) {
@@ -95,11 +94,10 @@ function stand() {
     } else if (playerSum > dealerSum) {
         message = "You Win"
     } else if (playerSum < dealerSum) {
-        message = "YOU LOSE!"
+        message = "You Lose!"
     }
 
     results.innerText = message;
-    document.getElementById("dealer-sum").innnerText = dealerSum;
     document.getElementById("player-sum").innerText = playerSum;
 
 
@@ -119,7 +117,6 @@ function hit() {
         canHit = false;
     }
     }
-    document.getElementById("dealer-sum").innnerText = dealerSum;
     document.getElementById("player-sum").innerText = playerSum;
     
 }
