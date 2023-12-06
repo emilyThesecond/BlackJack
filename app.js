@@ -1,4 +1,3 @@
-let startGameButton = document.querySelector("welcome-button")
 let newGameButton = document.querySelector(".new-game-button")
 let hitButton = document.querySelector(".hit-button")
 let standButton = document.querySelector(".stand-button")
@@ -7,7 +6,6 @@ let playerHand = document.querySelector(".player-hand")
 let results = document.querySelector(".results")
 let dealerSum = 0;
 let playerSum = 0;
-
 let dealerAceAmount = 0;
 let playerAceAmount = 0;
 let hidden;
@@ -64,6 +62,8 @@ function startGame() {
     dealerSum += getValue(card3);
     dealerAceAmount += checkAce(card3);
     dealerHand.append(cardImg3);
+    document.getElementById("dealer-sum").innnerText = dealerSum;
+    document.getElementById("player-sum").innerText = playerSum;
     hitButton.addEventListener("click", hit)
     standButton.addEventListener("click", stand)
     newGameButton.addEventListener("click", newGame)
@@ -119,6 +119,8 @@ function hit() {
         canHit = false;
     }
     }
+    document.getElementById("dealer-sum").innnerText = dealerSum;
+    document.getElementById("player-sum").innerText = playerSum;
     
 }
 function reduceAce(playerSum, playerAceAmount) {
@@ -147,7 +149,6 @@ function checkAce(card) {
         return 0;
     }
 }
-
 
     function newGame() {
     dealerHand.innerHTML = "";
